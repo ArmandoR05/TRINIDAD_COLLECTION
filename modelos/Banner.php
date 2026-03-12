@@ -10,7 +10,7 @@ class Banner
     {
         $conexion = abrirConexion();
 
-        $sql = "SELECT * FROM banner ORDER BY id DESC";
+        $sql = "SELECT * FROM Banner ORDER BY id DESC";
         $resultado = $conexion->query($sql);
 
         $banners = [];
