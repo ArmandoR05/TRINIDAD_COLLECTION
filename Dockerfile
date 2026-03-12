@@ -1,10 +1,13 @@
 FROM php:8.2-apache
 
-# Fijar un solo MPM (evita el error "More than one MPM loaded")
-RUN a2dismod mpm_event mpm_worker 2>/dev/null; a2enmod mpm_prefork
+# Eliminar MPMs conflictivos directamente (más confiable que a2dismod)
+RUN rm -f /etc/apache2/mods-enabled/mpm_event.load \
+          /etc/apache2/mods-enabled/mpm_event.conf \
+          /etc/apache2/mods-enabled/mpm_worker.load \
+          /etc/apache2/mods-enabled/mpm_worker.conf
 
-# Habilitar mod_rewrite para .htaccess
-RUN a2enmod rewrite
+# Asegurar que solo mpm_prefork esté activo
+RUN a2enmod mpm_prefork rewrite
 
 # Instalar extensión mysqli
 RUN docker-php-ext-install mysqli
