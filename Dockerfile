@@ -1,5 +1,8 @@
 FROM php:8.2-apache
 
+# Fijar un solo MPM (evita el error "More than one MPM loaded")
+RUN a2dismod mpm_event mpm_worker 2>/dev/null; a2enmod mpm_prefork
+
 # Habilitar mod_rewrite para .htaccess
 RUN a2enmod rewrite
 
