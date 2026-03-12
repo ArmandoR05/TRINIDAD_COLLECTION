@@ -1,0 +1,48 @@
+/* BASE: reset, variables globales y estilos generales */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --color-primary: #0b1538;
+    --color-primary-2: #13204d;
+    --color-primary-3: #1c2d68;
+    --color-text: #111111;
+    --color-text-soft: #4b5563;
+    --color-border: #dbe2f0;
+    --color-border-soft: #edf1f7;
+    --color-bg: #ffffff;
+    --color-bg-soft: #f7f9fc;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: var(--color-bg);
+    color: var(--color-text);
+    line-height: 1.5;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+img {
+    width: 100%;
+    display: block;
+}
+
+.logo img {
+    height: 45px;
+    width: auto;
+    display: block;
+}
+
+.empty-message,
+.catalog-empty {
+    color: rgb(0, 0, 0);
+    font-weight: bold;
+    padding: 20px 0;
+}

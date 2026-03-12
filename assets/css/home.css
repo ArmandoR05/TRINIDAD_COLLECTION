@@ -1,0 +1,109 @@
+/* HOME: portada, banners, accesos rápidos y secciones principales */
+
+.home-page {
+    width: 100%;
+}
+
+/* HERO CARRUSEL MÓVIL */
+#heroCarousel .carousel-indicators [data-bs-target] {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background-color: var(--color-primary);
+    opacity: 0.4;
+    border: none;
+}
+
+#heroCarousel .carousel-indicators .active {
+    opacity: 1;
+}
+
+/* HERO */
+.hero-section {
+    padding: 0 !important;
+    margin: 0 !important;
+}
+
+.hero-section.container-fluid {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+}
+
+.hero-section .row {
+    margin: 0 !important;
+    --bs-gutter-x: 0 !important;
+    --bs-gutter-y: 0 !important;
+}
+
+.hero-section .col-12,
+.hero-section .col-md-6,
+.hero-section [class*="col-"] {
+    padding: 0 !important;
+    margin: 0 !important;
+}
+
+.hero-card {
+    position: relative;
+    z-index: 0;
+    width: 100%;
+    height: 400px;
+    padding: 0 !important;
+    margin: 0 !important;
+    border: 0 !important;
+    overflow: hidden;
+    background: transparent;
+}
+
+.hero-img,
+.hero-card img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    display: block;
+    margin: 0 !important;
+    padding: 0 !important;
+    border: 0 !important;
+}
+
+.quick-links {
+    padding: 0 20px 40px;
+}
+
+.quick-links-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+}
+
+.quick-link-box {
+    border: 1px solid var(--color-primary);
+    padding: 18px;
+    text-align: center;
+    font-weight: bold;
+    letter-spacing: 2px;
+    color: var(--color-primary);
+    transition: 0.3s;
+}
+
+.quick-link-box:hover {
+    background-color: var(--color-primary);
+    color: #ffffff;
+}
+
+.products-section {
+    padding: 10px 20px 35px;
+}
+
+.section-header {
+    margin-bottom: 20px;
+}
+
+.section-header h2 {
+    font-size: 22px;
+    letter-spacing: 2px;
+    color: var(--color-primary);
+    margin-bottom: 0;
+}

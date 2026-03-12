@@ -1,0 +1,213 @@
+/* =========================
+   CATÁLOGO / PRODUCT CARDS
+========================= */
+
+.product-row > [class*="col-"] {
+    display: flex;
+}
+
+
+
+.catalog-card {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    background: #ffffff;
+    border: 1px solid var(--color-border);
+    overflow: hidden;
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.catalog-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+}
+
+.catalog-link {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    color: inherit;
+    text-decoration: none;
+}
+
+/* Imagen */
+.catalog-image {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+}
+
+/* ESTA ES LA CLASE QUE CONTROLA QUE LA CARD SEA MÁS ALTA */
+.catalog-image-tall {
+    aspect-ratio:  4 / 5;
+}
+
+.catalog-img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    transition: opacity 0.3s ease;
+}
+
+.img-primary {
+    opacity: 1;
+    z-index: 1;
+}
+
+.img-secondary {
+    opacity: 0;
+    z-index: 2;
+}
+
+.catalog-card:hover .img-primary {
+    opacity: 0;
+}
+
+.catalog-card:hover .img-secondary {
+    opacity: 1;
+}
+
+/* Info */
+.catalog-info-wrap {
+    position: relative;
+    min-height: 50px;
+    height: 50px;
+    overflow: hidden;
+    background: #ffffff;
+}
+
+.catalog-info {
+    position: absolute;
+    inset: 0;
+    padding: 8px 10px;
+    gap: 2px;
+    background: #ffffff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.default-info {
+    opacity: 1;
+    visibility: visible;
+    transition: opacity 0.25s ease, visibility 0.25s ease;
+}
+
+.hover-info {
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.25s ease, visibility 0.25s ease;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.catalog-card:hover .default-info {
+    opacity: 0;
+    visibility: hidden;
+}
+
+.catalog-card:hover .hover-info {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* Texto */
+.catalog-card .catalog-info h3 {
+    margin: 0 0 2px;
+    font-size: 12px !important;
+    line-height: 1.1 !important;
+    font-weight: 800;
+    text-transform: uppercase;
+}
+
+.catalog-category {
+    margin: 0 0 4px;
+    font-size: 12px;
+    line-height: 1.3;
+    color: var(--color-text-soft);
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    line-clamp: 2;
+}
+
+.catalog-category:empty {
+    display: none;
+}
+
+.catalog-card .catalog-info .price,
+.catalog-card .catalog-price {
+    font-size: 12px !important;
+    font-weight: 500;
+    line-height: 1.1 !important;
+    margin: 0;
+}
+
+.sizes-label {
+    margin: 0;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: var(--color-primary);
+}
+
+.sizes-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    justify-content: center;
+}
+
+.size-pill {
+    padding: 5px 9px;
+    font-size: 12px;
+    font-weight: 700;
+    line-height: 1;
+    color: var(--color-primary);
+    background: #ffffff;
+    border: 1px solid var(--color-primary);
+}
+
+/* =========================
+   PÁGINA CATÁLOGO
+========================= */
+
+.catalog-page {
+    padding-top: 24px;
+    padding-bottom: 50px;
+}
+
+.catalog-header {
+    margin-bottom: 24px;
+    text-align: center;
+}
+
+.catalog-header h1 {
+    margin-bottom: 10px;
+    font-size: 28px;
+    letter-spacing: 3px;
+    color: var(--color-primary);
+}
+
+.catalog-header p {
+    color: var(--color-text-soft);
+}
+
+.catalog-content {
+    width: 100%;
+}
+
+.catalog-total {
+    margin-bottom: 20px;
+    font-size: 16px;
+    color: var(--color-text);
+}

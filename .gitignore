@@ -1,0 +1,20 @@
+# Dependencias / caché
+/vendor/
+*.log
+
+# Archivos de entorno locales
+.env
+.env.local
+
+# Uploads locales (imágenes subidas en desarrollo)
+/assets/uploads/
+
+# Archivos de sistema
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# IDE
+.vscode/
+.idea/
+*.swp

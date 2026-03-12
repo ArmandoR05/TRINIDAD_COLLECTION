@@ -1,0 +1,12 @@
+RewriteEngine On
+RewriteBase /
+
+RewriteRule ^login/?$ index.php?controller=auth&action=showLogin [L,QSA]
+RewriteRule ^producto/([^/]+)/?$ index.php?controller=tienda&action=producto&slug=$1 [L,QSA]
+RewriteRule ^catalogo/([^/]+)/([^/]+)/?$ index.php?controller=tienda&action=catalogo&genero=$1&categoria=$2 [L,QSA]
+RewriteRule ^catalogo/([^/]+)/?$ index.php?controller=tienda&action=catalogo&genero=$1 [L,QSA]
+RewriteRule ^catalogo/?$ index.php?controller=tienda&action=catalogo [L,QSA]
+
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^ index.php [L,QSA]
